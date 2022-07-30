@@ -7,3 +7,7 @@ export default class UiController{
   }
 
 } 
+// import ArtDialogBox from "./mediatorWithObserver/ArticleDialogBox"
+
+// const articleDialogBox = new ArtDialogBox()
+// articleDialogBox.simulateUser()
