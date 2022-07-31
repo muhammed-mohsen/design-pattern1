@@ -1,11 +1,13 @@
-import AnchorTag from './visitor/AnchorTag';
-import HeadingTag from './visitor/HeadingTag';
-import HighlightingOperation from './visitor/HighlightingOperation';
-import HtmlDocument from './visitor/HtmlDocument';
-const anchorTag = new AnchorTag();
-const headingTage = new HeadingTag();
-const document = new HtmlDocument();
-const hilight = new HighlightingOperation();
-document.addNode(anchorTag);
-document.addNode(headingTage);
-document.execute(hilight);
+import Group from './creationalPatterns/composite/Group';
+import Shape from './creationalPatterns/composite/Shape';
+const group1 = new Group();
+group1.add(new Shape()); //squere
+group1.add(new Shape()); //squere
+const group2 = new Group();
+group2.add(new Shape()); //circle
+group2.add(new Shape()); //circle
+
+const group = new Group();
+group.add(group1);
+group.add(group2);
+group.render();
