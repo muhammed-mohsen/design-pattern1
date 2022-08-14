@@ -1,13 +1,10 @@
-import Group from './creationalPatterns/composite/Group';
-import Shape from './creationalPatterns/composite/Shape';
-const group1 = new Group();
-group1.add(new Shape()); //squere
-group1.add(new Shape()); //squere
-const group2 = new Group();
-group2.add(new Shape()); //circle
-group2.add(new Shape()); //circle
+import Library from './creationalPatterns/proxy/Library';
+import ProxyEbook from './creationalPatterns/proxy/ProxyEbook';
+const fileNames = ['a', 'b', 'c'];
+const library = new Library();
+fileNames.forEach((fileName) => {
+  library.add(new ProxyEbook(fileName));
+});
 
-const group = new Group();
-group.add(group1);
-group.add(group2);
-group.render();
+library.openBook('a');
+library.openBook('b');
